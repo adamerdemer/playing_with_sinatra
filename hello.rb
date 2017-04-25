@@ -14,6 +14,7 @@ require 'sinatra/reloader' if development?
 # end
 
 get '/cat' do
+  @name = ["Aimgo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
