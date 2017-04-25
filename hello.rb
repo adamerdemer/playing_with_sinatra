@@ -13,7 +13,14 @@ require 'sinatra/reloader' if development?
 #   'p90 rush b!'
 # end
 
-get '/cat' do
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb :index
+
+end
+
+get '/random-cat' do
   @name = ["Aimgo", "Oscar", "Viking"].sample
   erb(:index)
 end
